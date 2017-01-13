@@ -292,11 +292,11 @@
                         var output = $('#testconn');
 
                         $.ajax({
-                            url: 'https://rhstaging.agriapet.co.uk/api/Account/KeepAlive',
+                            url: 'https://jsonip.com',
                             //dataType: 'json',
                             timeout: 5000,
                             success: function (data, status) {
-                                output.append(data);
+                                output.append(data.ip);
                             },
                             error: function () {
                                 output.text('There was an error loading the data.');
