@@ -82,13 +82,17 @@
                         <span class="entypo-user icon"></span>
                         <span class="slick-tip left">Enter the date of birth</span>
                     </div>
+                    <!-- test -->
+                    <div id="testconn">
+                        TESTING...
+
+                    </div>
                     <!-- sex input -->
                     <div class="field">
                         <select name="sex" id="sex" class="grayed" onclick="this.className=this.options[this.selectedIndex].className">
                             <option value="" disabled="disabled" selected="selected" class="disabled">Sex</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
-                            <option value="defaultsss">defaults?</option>
                         </select>
                         <div id="arrow-select"></div>
                         <svg id="arrow-select-svg"></svg>
@@ -108,6 +112,7 @@
                         <span class="entypo-book icon"></span>
                         <span class="slick-tip left">Select the breed of the puppy</span>
                     </div>
+                    
                     <hr />
                     <!-- Name input -->
                     <div class="field">
@@ -269,16 +274,37 @@
                     </div>
                     <div class="clrfx mt-20"></div>
                     <!-- Terms and Conditions link -->
-                    <div class="terms w-47">Your information wonӴ be disclosed.<br>Read our <a href="#terms-popup">Terms and Conditions</a>.</div>
+                    <div class="terms w-47">Your information wont be disclosed.<br>Read our <a href="#terms-popup">Terms and Conditions</a>.</div>
                     <input type="submit" value="Send" class="send" form="feedback" name="send">
                 </form>
                 <!-- / Form fields -->
             </div>
             <!-- / Feedback form -->
             <script type="text/javascript" src="cordova.js"></script>
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
             <script type="text/javascript" src="js/index.js"></script>
             <script type="text/javascript">
                 app.initialize();
+
+                
+
+                    $(document).ready(function () {
+                        var output = $('#testconn');
+
+                        $.ajax({
+                            url: 'https://rhstaging.agriapet.co.uk/api/Account/KeepAlive',
+                            //dataType: 'json',
+                            timeout: 5000,
+                            success: function (data, status) {
+                                output.append(data);
+                            },
+                            error: function () {
+                                output.text('There was an error loading the data.');
+                            }
+                        });
+                    });
+
+
             </script>
             <div id="terms-popup" class="terms-window">
                 <a href="#close" class="close-overlay"></a>
