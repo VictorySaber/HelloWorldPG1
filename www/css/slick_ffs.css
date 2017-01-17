@@ -144,7 +144,7 @@ When adjusting the reset is adviced to check up the elements on your page, as th
 /***** Headings *****/
 
 #slick .title {
-	font-family: 'Lobster', cursive;
+	//font-family: 'Lobster', cursive;
 	font-weight: normal;
 	font-size: 32px;
 	color: #333;

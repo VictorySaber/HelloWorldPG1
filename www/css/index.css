@@ -112,4 +112,103 @@ h1 {
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
+
+}
+
+/********************************additional styles*******************************/
+
+header{
+    max-width:480px;
+    height:60px;
+}
+.logo{
+    width: 100%;
+    background:#FFF;
+    height: auto;
+    float: left;
+    padding: 10px !important;
+    margin-bottom: 10px !important;
+}
+#slick {
+    background-image: url(http://agriapet.staging.wpengine.com/wp-content/uploads/2016/10/bg1.gif);
+    background-repeat: repeat;
+    background-position: top left;
+    background-attachment: scroll;
+}
+#slick label.tick span {
+    font-size: 9px;
+}
+
+#slick input.send{
+    background: #9FB641;
+        border-radius: 5px;
+    }
+
+   #slick .field input:required, #slick .field textarea:required, #slick .field select:required{
+         background-color: #d9e7f4;
+             border: 1px solid #ccc;
+   } 
+
+/***** Validations *****/
+
+#slick .field input:required,
+#slick .field textarea:required,
+#slick .field select:required {
+     background-color: #d9e7f4;
+}
+#slick .field input:hover:invalid,
+#slick .field textarea:hover:invalid,
+#slick .field select:hover:invalid {
+   background-color: #d9e7f4;
+ 
+}
+#slick .field input:required:valid,
+#slick .field textarea:required:valid,
+#slick .field select:required:valid {
+    background-color: #d9e7f4;
+
+}
+#slick .field input:focus:invalid,
+#slick .field textarea:focus:invalid,
+#slick .field select:focus:invalid {
+    background-color: #d9e7f4;
+
+}
+
+
+
+
+   #slick .field select, #arrow-select, #arrow-select-svg{
+    background-color: #d9e7f4;
+   }
+   #slick select:hover ~ #arrow-select,
+#slick select:focus ~ #arrow-select,
+#slick select:hover ~ #arrow-select-svg,
+#slick select:focus ~ #arrow-select-svg {
+    background-color: #d9e7f4;
+}
+   
+
+   #slick .field span.icon {
+        background-color: #014586;
+   }
+
+ #slick .stars > input:checked ~ label {
+    color: #9FB641;
+}
+#slick .stars:not(:checked) > label:hover,
+#slick .stars:not(:checked) > label:hover ~ label {
+    color: #9FB641;
+}
+#slick .stars > input:checked ~ label:hover,
+#slick .stars > input:checked ~ label:hover ~ label,
+#slick .stars > label:hover ~ input:checked ~ label {
+    color: #9FB641;
+}
+
+#slick .blocks label:hover {
+    background: #9FB641;
+}
+#slick .blocks input:checked + label { 
+    background: #9FB641;
 }
