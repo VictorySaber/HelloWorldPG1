@@ -27,7 +27,7 @@
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
     <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />-->
     <!-- Good default declaration:
     * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
     * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
@@ -37,620 +37,569 @@
     * Create your own at http://cspisawesome.com
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
-
     <!--<link rel="stylesheet" type="text/css" href="css/index.css" />-->
     <link rel="stylesheet" type="text/css" href="css/slick_ffs.css" />
-     <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/form-elements.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+
     <title>Five weeks FREE | Set up Five weeks FREE</title>
 </head>
 
 <body>
-    <!--<div class="app">
-        <h1>PhoneGap</h1>
-        <div id="deviceready" class="blink">
-            <p class="event listening">Connecting to Device</p>
-            <p class="event received">Device is Ready</p>
+    <!-- Top menu -->
+    <nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Breeder Mobile App</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="top-navbar-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <span class="li-social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-envelope"></i></a>
+                            <a href="#"><i class="fa fa-skype"></i></a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>-->
-    <div id="page-2">
+    </nav>
+    <!-- Top content -->
+    <div class="top-content">
 
-        <div class="clrfx-buy"></div>
+        <div class="inner-bg">
+            <div class="container">
 
-        <section id="slick">
-            <!-- Social buttons -->
-            <div class="sb">
-                <a href="#" class="fb entypo-thumbs-up"><span class="slick-tip right">Like us on Facebook</span></a>
-                <a href="#" class="gc entypo-google-circles"><span class="slick-tip right">Find us in Circles</span></a>
-                <a href="#" class="tw entypo-twitter"><span class="slick-tip right">Follow us on Twitter</span></a>
-            </div>
-            <div class="logo">
-                 <img src="http://www.agriapet.co.uk/wp-content/uploads/2016/10/logo.png">
-                 </div>
-            <!-- Feedback form -->
-            <div class="feedback-form">
-                <!-- Title -->
-                <div class="title">About the puppy</div>
-                <!-- Intro text -->
-                <p class="intro">Please start by checking the puppy's details, then enter the new owner's details and press the 'Continue' button to activate cover.</p>
-                <!-- Form fields -->
-                <form action="" name="feedback" id="feedback" method="post">
-                    <!-- Name input -->
-                    <div class="field">
-                        <input name="name" placeholder="Puppy's name" type="text" id="name" required="">
-                        <span class="entypo-user icon"></span>
-                        <span class="slick-tip left">Enter the puppy's name</span>
-                    </div>
-                    <!-- dob input -->
-                    <div class="field">
-                        <input name="dob" placeholder="Date of Birth" type="text" id="dob" required="">
-                        <span class="entypo-user icon"></span>
-                        <span class="slick-tip left">Enter the date of birth</span>
-                    </div>
-                    <!-- sex input -->
-                    <div class="field">
-                        <select name="sex" id="sex" class="grayed" onclick="this.className=this.options[this.selectedIndex].className">
-                            <option value="" disabled="disabled" selected="selected" class="disabled">Sex</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                        </select>
-                        <div id="arrow-select"></div>
-                        <svg id="arrow-select-svg"></svg>
-                        <span class="entypo-book icon"></span>
-                        <span class="slick-tip left">Select the sex of the puppy</span>
-                    </div>
-                    <!-- breed input -->
-                    <div class="field">
-                        <select name="breed" id="breed" class="grayed" onclick="this.className=this.options[this.selectedIndex].className">
-                            <option value="" disabled="disabled" selected="selected" class="disabled">Breed</option>
-                            <option value="1">Affenpinscher</option>
-                            <option value="2">Afghan Hound</option>
-                            <option value="5">Airedale Terrier</option>
-                            <option value="6">Akita</option>
-                            <option value="7">Alaskan Malamute</option>
-                            <option value="10">Anatolian Shepherd Dog</option>
-                            <option value="11">Australian Cattle Dog</option>
-                            <option value="13">Australian Kelpie</option>
-                            <option value="14">Australian Shepherd</option>
-                            <option value="15">Australian Silky Terrier</option>
-                            <option value="16">Australian Terrier</option>
-                            <option value="17">Azawakh</option>
-                            <option value="18">Basenji</option>
-                            <option value="19">Basset</option>
-                            <option value="20">Basset Bleu De Gascogne </option>
-                            <option value="21">Basset Fauve De Bretagne</option>
-                            <option value="22">Basset Griffon Vendeen (Grand)</option>
-                            <option value="23">Basset Griffon Vendeen (Petit)</option>
-                            <option value="24">Basset Hound</option>
-                            <option value="25">Bavarian Mountain Hound</option>
-                            <option value="26">Beagle</option>
-                            <option value="27">Bearded Collie</option>
-                            <option value="29">Bedlington Terrier</option>
-                            <option value="30">Belgian Shepherd Dog</option>
-                            <option value="31">Belgian Shepherd Dog (Groenendael)</option>
-                            <option value="32">Belgian Shepherd Dog (Laekenois)</option>
-                            <option value="33">Belgian Shepherd Dog (Malinois)</option>
-                            <option value="34">Belgian Shepherd Dog (Tervueren)</option>
-                            <option value="35">Bergamasco</option>
-                            <option value="36">Bernese Mountain Dog</option>
-                            <option value="37">Bichon Frise</option>
-                            <option value="38">Bloodhound</option>
-                            <option value="39">Bolognese</option>
-                            <option value="41">Border Collie</option>
-                            <option value="42">Border Terrier</option>
-                            <option value="43">Borzoi</option>
-                            <option value="44">Boston Terrier</option>
-                            <option value="45">Bouvier Des Flandres</option>
-                            <option value="46">Boxer</option>
-                            <option value="47">Bracco Italiano</option>
-                            <option value="48">Briard</option>
-                            <option value="49">Brittany</option>
-                            <option value="50">Broken Haired Terriers</option>
-                            <option value="52">Bull Terrier</option>
-                            <option value="53">Bull Terrier (Miniature)</option>
-                            <option value="54">Bulldog</option>
-                            <option value="55">Bullmastiff</option>
-                            <option value="56">Cairn Terrier</option>
-                            <option value="58">Canaan Dog</option>
-                            <option value="59">Canadian Eskimo Dog</option>
-                            <option value="62">Catalan Sheepdog </option>
-                            <option value="63">Cavalier King Charles Spaniel</option>
-                            <option value="64">Central Asian Shepherd Dog</option>
-                            <option value="65">Cesky Terrier</option>
-                            <option value="66">Chihuahua (Long Coat)</option>
-                            <option value="67">Chihuahua (Smooth Coat)</option>
-                            <option value="68">Chinese Crested</option>
-                            <option value="69">Chow Chow</option>
-                            <option value="70">Cirneco dell'Etna</option>
-                            <option value="72">Collie (Rough)</option>
-                            <option value="73">Collie (Smooth)</option>
-                            <option value="74">Continental Landseer</option>
-                            <option value="75">Coonhound</option>
-                            <option value="76">Coton de tulear</option>
-                            <option value="77">Crossbreed</option>
-                            <option value="78">Dachsbracke</option>
-                            <option value="79">Dachshund (Long Haired)</option>
-                            <option value="80">Dachshund (Miniature Long Haired)</option>
-                            <option value="81">Dachshund (Miniature Smooth Haired)</option>
-                            <option value="82">Dachshund (Miniature Wire Haired)</option>
-                            <option value="83">Dachshund (Smooth Haired)</option>
-                            <option value="84">Dachshund (Wire Haired)</option>
-                            <option value="85">Dalmatian</option>
-                            <option value="86">Dandie Dinmont Terrier</option>
-                            <option value="87">Deerhound</option>
-                            <option value="88">Dobermann</option>
-                            <option value="89">Dogue De Bordeaux</option>
-                            <option value="91">Drentse Partridge Dog</option>
-                            <option value="93">English Setter</option>
-                            <option value="94">English Toy Terrier (Black &amp; Tan)</option>
-                            <option value="95">Estrela Mountain Dog</option>
-                            <option value="96">Eurasier</option>
-                            <option value="97">Felland Terrier</option>
-                            <option value="98">Finnish Lapphund</option>
-                            <option value="99">Finnish Spitz</option>
-                            <option value="100">Fox Terrier (Smooth)</option>
-                            <option value="101">Fox Terrier (Wire)</option>
-                            <option value="102">Foxhound</option>
-                            <option value="103">French Bulldog</option>
-                            <option value="105">German Longhaired Pointer</option>
-                            <option value="106">German Pinscher</option>
-                            <option value="107">German Pointer</option>
-                            <option value="108">German Shepherd Dog</option>
-                            <option value="109">German Shorthaired Pointer</option>
-                            <option value="110">German Spitz (Klein)</option>
-                            <option value="111">German Spitz (Mittel)</option>
-                            <option value="112">German Wirehaired Pointer</option>
-                            <option value="113">Giant Schnauzer</option>
-                            <option value="114">Glen Of Imaal Terrier</option>
-                            <option value="115">Gordon Setter</option>
-                            <option value="117">Grand Bleu De Gascogne</option>
-                            <option value="119">Great Dane</option>
-                            <option value="121">Greenland Dog</option>
-                            <option value="122">Greyhound</option>
-                            <option value="124">Griffon Bruxellois</option>
-                            <option value="126">Halden Hound</option>
-                            <option value="127">Hamiltonstovare</option>
-                            <option value="128">Harrier</option>
-                            <option value="129">Havanese</option>
-                            <option value="131">Hovawart</option>
-                            <option value="132">Hungarian Kuvasz</option>
-                            <option value="133">Hungarian Puli</option>
-                            <option value="134">Hungarian Vizsla</option>
-                            <option value="135">Hungarian Wire Haired Vizsla</option>
-                            <option value="136">New Zealand Huntaway</option>
-                            <option value="137">Alaskan Husky</option>
-                            <option value="138">Ibizan Hound</option>
-                            <option value="141">Irish Red &amp; White Setter</option>
-                            <option value="143">Irish Setter</option>
-                            <option value="144">Irish Terrier</option>
-                            <option value="145">Irish Water Spaniel</option>
-                            <option value="146">Irish Wolfhound</option>
-                            <option value="147">Italian Greyhound</option>
-                            <option value="148">Italian Spinone</option>
-                            <option value="149">Italian Volpino</option>
-                            <option value="150">Jack Russell Terrier</option>
-                            <option value="151">Japanese Akita Inu</option>
-                            <option value="152">Japanese Chin</option>
-                            <option value="153">Japanese Shiba Inu</option>
-                            <option value="155">Japanese Spitz</option>
-                            <option value="156">Keeshond</option>
-                            <option value="158">Kerry Blue Terrier</option>
-                            <option value="159">King Charles Spaniel</option>
-                            <option value="160">Komondor</option>
-                            <option value="161">Kooikerhondje</option>
-                            <option value="163">Korthals Griffon</option>
-                            <option value="164">Kuvasz</option>
-                            <option value="165">Labradoodle</option>
-                            <option value="168">Lakeland Terrier</option>
-                            <option value="169">Lancashire Heeler</option>
-                            <option value="171">Large Munsterlander</option>
-                            <option value="172">Leonberger</option>
-                            <option value="173">Lhasa Apso</option>
-                            <option value="174">Lowchen (Little Lion Dog)</option>
-                            <option value="175">Lucas Terrier</option>
-                            <option value="176">Lurcher</option>
-                            <option value="179">Maltese</option>
-                            <option value="180">Manchester Terrier</option>
-                            <option value="181">Maremma Sheepdog</option>
-                            <option value="182">Mastiff</option>
-                            <option value="184">Miniature Pinscher</option>
-                            <option value="186">Miniature Schnauzer</option>
-                            <option value="188">Neapolitan Mastiff</option>
-                            <option value="189">Newfoundland</option>
-                            <option value="190">Norfolk Terrier</option>
-                            <option value="191">Northern Inuit Dog</option>
-                            <option value="192">Norwegian Buhund</option>
-                            <option value="193">Norwegian Elkhound</option>
-                            <option value="194">Norwegian Lundehund</option>
-                            <option value="195">Norwich Terrier</option>
-                            <option value="196">Old English Sheepdog</option>
-                            <option value="197">Otterhound</option>
-                            <option value="198">Papillon</option>
-                            <option value="199">Parson Russell Terrier</option>
-                            <option value="200">Patterdale Terrier</option>
-                            <option value="201">Pekingese</option>
-                            <option value="202">Perdigueiro Portuguese</option>
-                            <option value="205">Pharaoh Hound</option>
-                            <option value="207">Plummer Terrier</option>
-                            <option value="208">Pointer</option>
-                            <option value="210">Polish Lowland Sheepdog</option>
-                            <option value="211">Pomeranian</option>
-                            <option value="212">Poodle (Miniature)</option>
-                            <option value="213">Poodle (Standard)</option>
-                            <option value="214">Poodle (Toy)</option>
-                            <option value="215">Portuguese Podengo</option>
-                            <option value="216">Portuguese Pointer</option>
-                            <option value="217">Portuguese Water Dog</option>
-                            <option value="218">Pug</option>
-                            <option value="219">Pyrenean Mastiff</option>
-                            <option value="221">Pyrenean Mountain Dog</option>
-                            <option value="222">Pyrenean Sheepdog</option>
-                            <option value="224">Retriever (Chesapeake Bay)</option>
-                            <option value="225">Retriever (Curly Coated)</option>
-                            <option value="226">Retriever (Flat Coated)</option>
-                            <option value="227">Retriever (Golden)</option>
-                            <option value="228">Retriever (Labrador)</option>
-                            <option value="229">Retriever (Nova Scotia Duck Tolling)</option>
-                            <option value="230">Rhodesian Ridgeback</option>
-                            <option value="231">Rottweiler</option>
-                            <option value="232">Rough Collie</option>
-                            <option value="235">Russian Black Terrier</option>
-                            <option value="237">Saluki</option>
-                            <option value="238">Samoyed</option>
-                            <option value="239">Sarplaninac (Yugoslavian Shepherd)</option>
-                            <option value="240">Schapendoes</option>
-                            <option value="241">Schipperke</option>
-                            <option value="242">Schnauzer</option>
-                            <option value="243">Scottish Terrier</option>
-                            <option value="244">Sealyham Terrier</option>
-                            <option value="245">Segugio Italiano</option>
-                            <option value="246">Shar Pei</option>
-                            <option value="247">Shetland Sheepdog</option>
-                            <option value="248">Shiba Inu</option>
-                            <option value="249">Shih Tzu</option>
-                            <option value="250">Siberian Husky</option>
-                            <option value="253">Skye Terrier</option>
-                            <option value="254">Sloughi</option>
-                            <option value="255">Slovakian Rough Haired Pointer</option>
-                            <option value="256">Small Munsterlander</option>
-                            <option value="258">Soft Coated Wheaten Terrier</option>
-                            <option value="260">Spaniel (American Cocker)</option>
-                            <option value="261">Spaniel (American Water)</option>
-                            <option value="262">Spaniel (Clumber)</option>
-                            <option value="263">Spaniel (Cocker)</option>
-                            <option value="264">Spaniel (English Springer)</option>
-                            <option value="265">Spaniel (Field)</option>
-                            <option value="266">Spaniel (Irish Water)</option>
-                            <option value="267">Spaniel (Sussex)</option>
-                            <option value="268">Spaniel (Welsh Springer)</option>
-                            <option value="269">Spanish Water Dog</option>
-                            <option value="270">Spanish Water Dog (Imp)</option>
-                            <option value="271">St. Bernard</option>
-                            <option value="272">Staffordshire Bull Terrier</option>
-                            <option value="275">Swedish Lapphund</option>
-                            <option value="276">Swedish Vallhund</option>
-                            <option value="277">Swiss Laufhund (Jura)</option>
-                            <option value="278">Tibetan Mastiff</option>
-                            <option value="279">Tibetan Spaniel</option>
-                            <option value="280">Tibetan Terrier</option>
-                            <option value="282">Weimaraner</option>
-                            <option value="283">Welsh Corgi (Cardigan)</option>
-                            <option value="284">Welsh Corgi (Pembroke)</option>
-                            <option value="285">Welsh Sheepdog</option>
-                            <option value="287">Welsh Terrier</option>
-                            <option value="288">West Highland White Terrier</option>
-                            <option value="289">Whippet</option>
-                            <option value="292">Working Sheepdog</option>
-                            <option value="293">Yorkshire Terrier</option>
-                            <option value="468">Black Mouth Cur</option>
-                            <option value="471">Barbet (French Water Dog)</option>
-                            <option value="473">Dorset Old Tyme Bulldogge</option>
-                            <option value="474">Pumi</option>
-                            <option value="475">Korean Jindo</option>
-                            <option value="477">Beauceron</option>
-                            <option value="481">Chesapeake Bay Retiever</option>
-                            <option value="489">Hanoverian Hound</option>
-                            <option value="492">Lagotto Romagnolo</option>
-                            <option value="495">Mexican Hairless (Intermediate)</option>
-                            <option value="496">Mexican Hairless (Miniature)</option>
-                            <option value="497">Mexican Hairless (Standard)</option>
-                            <option value="514">French Pointer</option>
-                            <option value="515">Kromfohrlander</option>
-                            <option value="516">Great Swiss Mountain Dog</option>
-                            <option value="517">Podenco Canario </option>
-                            <option value="518">Entlebucher Mountain Dog</option>
-                            <option value="519">Karakachan (Bulgarian Shepherd Dog)</option>
-                            <option value="520">Crossbreed (Small)</option>
-                            <option value="521">Crossbreed (Large)</option>
-                            <option value="522">Mongrel (Small)</option>
-                            <option value="523">Mongrel (Large)</option>
-                            <option value="524">Mongrel (Medium)</option>
-                            <option value="526">Old Danish Pointer</option>
-                            <option value="529">Treeing Walker Coonhound</option>
-                            <option value="546">Croatian Sheepdog</option>
-                            <option value="547">Grand Griffon Vendeen</option>
-                            <option value="548">Griffon Fauve De Bretagne</option>
-                            <option value="549">Dutch Shepherd Dog</option>
-                            <option value="550">Mudi</option>
-                            <option value="551">Portuguese Sheepdog</option>
-                            <option value="553">Briquet Griffon Vendeen</option>
-                            <option value="554">Thai Bangkaew Dog</option>
-                            <option value="555">Alaskan Klee Kia Toy</option>
-                            <option value="556">Alaskan Klee Kia Minature</option>
-                            <option value="557">Alaskan Klee Kia Standard</option>
-                            <option value="558">Greek Harehound</option>
-                            <option value="560">Transylvanian Hound</option>
-                            <option value="562">Stabyhoun</option>
-                            <option value="568">Pudelpointer</option>
-                            <option value="569">Appenzeller Mountain Dog</option>
-                            <option value="570">Galgo Espanol</option>
-                            <option value="571">Prague Ratter</option>
-                            <option value="572">Spaniel (American Boykin)</option>
-                            <option value="573">White Shepherd</option>
-                            <option value="574">Braque d'Auvergne</option>
-                            <option value="575">Russian Toy Terrier</option>
-                            <option value="576">Carpathian Shepherd Dog</option>
-                            <option value="577">Biewer Terrier</option>
-                            <option value="578">Berger Picard</option>
-                            <option value="579">Miniature American Shepherd</option>
-                            <option value="580">Spaniel (German)</option>
-                            <option value="583">Swedish Elkhound</option>
-                            <option value="584">Huntaway</option>
-                            <option value="586">Olde English Bulldogge</option>
-                            <option value="587">Bohemian Shepherd</option>
-                            <option value="588">Ariegeois Hound</option>
-                            <option value="590">Castro Laboreiro </option>
-                            <option value="592">German Spaniel</option>
-                            <option value="594">Turkish Kangal</option>
-                            <option value="595">Floodle</option>
-                            <option value="596">Cockapoo</option>
-                            <option value="597">Chug</option>
-                            <option value="598">Sprocker</option>
-                            <option value="599">Yorkie Russell</option>
-                            <option value="600">Yorkipoo</option>
-                            <option value="601">Cavachon</option>
-                            <option value="602">Jack A Poo</option>
-                            <option value="603">Puggle</option>
-                            <option value="604">Shih Poo</option>
-                            <option value="605">Springerdoodle</option>
-                            <option value="606">Cavapoo</option>
-                            <option value="607">Chorkie</option>
-                            <option value="608">Goldendoodle</option>
-                            <option value="609">Jack Chi</option>
-                            <option value="612">English Shepherd</option>
-                            <option value="613">Tornjak</option>
-                            <option value="614">Jura Hound</option>
-                            <option value="615">Spanish Mastiff</option>
-                            <option value="616">Ciobanesc De Bucovina</option>
-                            <option value="617">Ratonero Bodeguero Andaluz</option>
-                            <option value="619">Hungarian Pumi</option>
-                            <option value="620">American Hairless Terrier</option>
-                            <option value="621">Australian Labradoodle</option>
-                            <option value="648">Kokoni</option>
-                        </select>
-                        <div id="arrow-select"></div>
-                        <svg id="arrow-select-svg"></svg>
-                        <span class="entypo-book icon"></span>
-                        <span class="slick-tip left">Select the breed of the puppy</span>
-                    </div>
-                    <hr />
-                    <!-- Name input -->
-                    <div class="field">
-                        <input name="ownername" placeholder="Owner's name" type="text" id="ownername" required="">
-                        <span class="entypo-user icon"></span>
-                        <span class="slick-tip left">Enter the new owner's name</span>
-                    </div>
-                    <!-- Email input -->
-                    <div class="field">
-                        <input name="email" placeholder="Contact email" type="email" id="email" required="">
-                        <span class="entypo-mail icon"></span>
-                        <span class="slick-tip left">Enter the new owner's email</span>
-                    </div>
-					<!-- show ip -->
-                    <div class="field">
-                        <label id="testconn">Your IP Address is...</label>
-                        <span class="entypo-mail icon"></span>
-                        <span class="slick-tip left">Your IP Address</span>
-                    </div>
-                    <!-- Subject input -->
-                    <!--<div class="field">
-                        <select name="subject" id="subject" class="grayed" onclick="this.className=this.options[this.selectedIndex].className">
-                            <option value="" disabled="disabled" selected="selected" class="disabled">Subject</option>
-                            <option value="Positive feedback">1. Positive feedback</option>
-                            <option value="Negative feedback">2. Negative feedback</option>
-                            <option value="Suggestions">3. Suggestions</option>
-                        </select>
-                        <div id="arrow-select"></div>
-                        <svg id="arrow-select-svg"></svg>
-                        <span class="entypo-book icon"></span>
-                        <span class="slick-tip left">Choose subject</span>
-                    </div>-->
-                    <!-- Message input -->
-                    <div class="field">
-                        <textarea name="message" placeholder="Feedback" id="message" required=""></textarea>
-                        <span class="entypo-comment icon"></span>
-                        <span class="slick-tip left">Any other information?</span>
-                    </div>
-                    <!-- Block checboxes -->
-                    <div class="field">
-                        <p class="ratings"><span class="entypo-info-circled"></span>Please provide us the new owner's age</p>
-                        <fieldset class="blocks" id="age">
-                            <!-- 18 - 25 -->
-                            <input type="radio" id="age-1" name="age" value="18 - 25">
-                            <label for="age-1">18 - 25</label>
-                            <!-- 25 - 35 -->
-                            <input type="radio" id="age-2" name="age" value="25 - 35">
-                            <label for="age-2">25 - 35</label>
-                            <!-- 35 - 45 -->
-                            <input type="radio" id="age-3" name="age" value="35 - 45">
-                            <label for="age-3">35 - 45</label>
-                            <!-- 45 - 60 -->
-                            <input type="radio" id="age-4" name="age" value="45 - 60">
-                            <label for="age-4">45 - 60</label>
-                            <!-- 65 - 75 -->
-                            <input type="radio" id="age-5" name="age" value="60 - 75">
-                            <label for="age-5">60 - 75</label>
-                            <!-- 75 - 90 -->
-                            <input type="radio" id="age-6" name="age" value="75 - 90">
-                            <label for="age-6">75 - 90</label>
-                        </fieldset>
-                    </div>
-                    <div class="clrfx mt-10 mb-20 bt"></div>
-                    <!-- Stars rating 1 -->
-                    <div class="field">
-                        <p class="ratings"><span class="entypo-briefcase"></span>Our services &amp; customer care</p>
-                        <fieldset class="stars" id="service-rating">
-                            <!-- 5 stars -->
-                            <input type="radio" id="service-5" name="service-rating" value="5">
-                            <label for="service-5"><span class="slick-tip rate">Awesome</span></label>
-                            <!-- 4 stars -->
-                            <input type="radio" id="service-4" name="service-rating" value="4">
-                            <label for="service-4"><span class="slick-tip rate">Pretty satisfied</span></label>
-                            <!-- 3 stars -->
-                            <input type="radio" id="service-3" name="service-rating" value="3" checked="checked">
-                            <label for="service-3"><span class="slick-tip rate">Not best, not worst</span></label>
-                            <!-- 2 stars -->
-                            <input type="radio" id="service-2" name="service-rating" value="2">
-                            <label for="service-2"><span class="slick-tip rate">Room for improvement</span></label>
-                            <!-- 1 star -->
-                            <input type="radio" id="service-1" name="service-rating" value="1">
-                            <label for="service-1"><span class="slick-tip rate">Not soo good</span></label>
-                        </fieldset>
-                    </div>
-                    <div class="clrfx mt-10"></div>
-                    <!-- Stars rating 2 -->
-                    <div class="field">
-                        <p class="ratings"><span class="entypo-chat"></span>After sales support &amp; help</p>
-                        <fieldset class="stars" id="support-rating">
-                            <!-- 5 stars -->
-                            <input type="radio" id="support-5" name="support-rating" value="5">
-                            <label for="support-5"><span class="slick-tip rate">Awesome</span></label>
-                            <!-- 4 stars -->
-                            <input type="radio" id="support-4" name="support-rating" value="4">
-                            <label for="support-4"><span class="slick-tip rate">Pretty satisfied</span></label>
-                            <!-- 3 stars -->
-                            <input type="radio" id="support-3" name="support-rating" value="3" checked="checked">
-                            <label for="support-3"><span class="slick-tip rate">Not best, not worst</span></label>
-                            <!-- 2 stars -->
-                            <input type="radio" id="support-2" name="support-rating" value="2">
-                            <label for="support-2"><span class="slick-tip rate">Room for improvement</span></label>
-                            <!-- 1 star -->
-                            <input type="radio" id="support-1" name="support-rating" value="1">
-                            <label for="support-1"><span class="slick-tip rate">Not soo good</span></label>
-                        </fieldset>
-                    </div>
-                    <div class="clrfx mt-10"></div>
-                    <!-- Stars rating 3 -->
-                    <div class="field">
-                        <p class="ratings"><span class="entypo-users"></span>Our team &amp; staff valuation</p>
-                        <fieldset class="stars" id="team-rating">
-                            <!-- 5 stars -->
-                            <input type="radio" id="team-5" name="team-rating" value="5">
-                            <label for="team-5"><span class="slick-tip rate">Awesome</span></label>
-                            <!-- 4 stars -->
-                            <input type="radio" id="team-4" name="team-rating" value="4">
-                            <label for="team-4"><span class="slick-tip rate">Pretty satisfied</span></label>
-                            <!-- 3 stars -->
-                            <input type="radio" id="team-3" name="team-rating" value="3" checked="checked">
-                            <label for="team-3"><span class="slick-tip rate">Not best, not worst</span></label>
-                            <!-- 2 stars -->
-                            <input type="radio" id="team-2" name="team-rating" value="2">
-                            <label for="team-2"><span class="slick-tip rate">Room for improvement</span></label>
-                            <!-- 1 star -->
-                            <input type="radio" id="team-1" name="team-rating" value="1">
-                            <label for="team-1"><span class="slick-tip rate">Not soo good</span></label>
-                        </fieldset>
-                    </div>
-                    <div class="clrfx mt-10 mb-20 bt"></div>
-                    <!-- Tick checboxes -->
-                    <div class="field">
-                        <p class="ratings"><span class="entypo-link"></span>How can we improve your satisfaction?</p>
-                        <div class="clrfx mt-20"></div>
-                        <!-- Option 1 -->
-                        <div class="w-30 mr-5">
-                            <input type="checkbox" id="new-services" name="new-services">
-                            <label for="new-services" class="tick"><span>New services</span></label>
-                        </div>
-                        <!-- Option 2 -->
-                        <div class="w-30 mr-5">
-                            <input type="checkbox" id="better-support" name="better-support">
-                            <label for="better-support" class="tick"><span>Better support</span></label>
-                        </div>
-                        <!-- Option 3 -->
-                        <div class="w-30">
-                            <input type="checkbox" id="faster-response" name="faster-response">
-                            <label for="faster-response" class="tick"><span>Faster response</span></label>
-                        </div>
-                        <div class="clrfx mt-10"></div>
-                        <!-- Option 4 -->
-                        <div class="w-30 mr-5">
-                            <input type="checkbox" id="performance" name="performance">
-                            <label for="performance" class="tick"><span>Performance</span></label>
-                        </div>
-                        <!-- Option 5 -->
-                        <div class="w-30 mr-5">
-                            <input type="checkbox" id="new-products" name="new-products">
-                            <label for="new-products" class="tick"><span>New products</span></label>
-                        </div>
-                        <!-- Option 6 -->
-                        <div class="w-30">
-                            <input type="checkbox" id="more-updates" name="more-updates">
-                            <label for="more-updates" class="tick"><span>More updates</span></label>
-                        </div>
-                    </div>
-                    <div class="clrfx mt-20"></div>
-                    <!-- Terms and Conditions link -->
-                    <div class="terms w-47">Your information won't be disclosed.<br>Read our <a href="#terms-popup">Terms and Conditions</a>.</div>
-                    <input type="submit" value="Send" class="send" form="feedback" name="send">
-                </form>
-                <!-- / Form fields -->
-            </div>
-            <!-- / Feedback form -->
-            <script type="text/javascript" src="cordova.js"></script>
-            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-            <script type="text/javascript" src="js/index.js"></script>
-            <script type="text/javascript">
-                app.initialize();
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 form-box">
 
-                $(document).ready(function () {
-                    var output = $('#testconn');
+                        <form role="form" action="" method="post" class="activation-form">
 
-                    $.ajax({
-                        url: 'https://jsonip.com',
-                        //dataType: 'json',
-                        timeout: 5000,
-                        success: function (data, status) {
-                            output.append(data.ip);
-                        },
-                        error: function () {
-                            output.text('There was an error loading the data.');
-                        }
-                    });
-                });
-            </script>
-            <div id="terms-popup" class="terms-window">
-                <a href="#close" class="close-overlay"></a>
-                <div>
-                    <a href="#close" class="close entypo-cancel-circled"></a>
-                    <div class="title">Terms &amp; Conditions</div>
-                    <p class="intro">
-                        <b>1. Lorem ipsum</b><br>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.<br>
-                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.	Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-                    </p>
-                    <p class="intro">
-                        <b>2. Dolor commodo</b><br>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.	Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-                    </p>
-                    <p class="intro">
-                        <b>3. Sit amet</b><br>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.<br>
-                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-                    </p>
+                            <fieldset>
+                                <div class="form-top">
+                                    <div class="form-top-left">
+                                        <h3>Login</h3>
+
+                                    </div>
+                                    <div class="form-top-right">
+                                        <i class="fa fa-key"></i>
+                                    </div>
+                                </div>
+                                <div class="form-bottom">
+                                    <div class="form-group">
+                                        <label for="form-animal-type" class="sr-only">Type of Animal...<span class="control-label req">*</span></label>
+
+                                        <select name="form-animal-type" id="form-animal-type" class="form-animal-type form-control">
+                                            <option value="">Please select type of animal</option>
+                                            <option value="Dog">Puppy</option>
+                                            <option value="Cat">Kitten</option>
+                                        </select>
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-agria-id">Agria ID</label>
+                                        <input type="text" name="form-agria-id" placeholder="Agria ID..."
+                                               class="form-agria-id form-control" id="form-agria-id">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-email">Your Email</label>
+                                        <input type="email" name="form-email" placeholder="Your Email..." class="form-email form-control" id="form-email">
+                                    </div>
+
+                                    <!--<button type="button" class="btn btn-previous">Previous</button>-->
+                                    <button type="button" class="btn btn-next">Login</button>
+                                </div>
+
+                            </fieldset>
+
+                            <fieldset>
+                                <div class="form-top">
+                                    <div class="form-top-left">
+                                        <h3>About your puppy</h3>
+                                        <p>
+                                            Please start by checking the puppy's details, then enter the new owner's details and press the 'Continue' button to activate cover.
+
+                                        </p>
+                                    </div>
+                                    <div class="form-top-right">
+                                        <i class="fa fa-paw"></i>
+                                    </div>
+                                </div>
+
+                                <div class="form-bottom">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-first-name">Your Puppy's Name</label>
+                                        <input type="text" name="form-pet-name" placeholder="Your Puppy's Name..." class="form-pet-name form-control" id="form-pet-name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-dob">Date of Birth</label>
+                                        <input type="date" name="form-dob" placeholder="Date of Birth..." class="form-dob form-control" id="form-dob">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-sex">Sex</label>
+                                        <select name="form-sex" id="form-sex" class="form-sex form-control">
+                                            <option selected="selected" value="">Please select pet's sex...</option>
+                                            <option value="M">Male</option>
+                                            <option value="F">Female</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-breed">Breed</label>
+                                        <select name="form-breed" id="form-breed" class="form-breed form-control">
+                                            <option selected="selected" value="">Please select breed...</option>
+                                            <option value="" disabled="disabled">——— TOP BREEDS ———</option>
+                                            <option value="228">Retriever (Labrador)</option>
+                                            <option value="263">Spaniel (Cocker)</option>
+                                            <option value="264">Spaniel (English Springer)</option>
+                                            <option value="108">German Shepherd Dog (Alsatian)</option>
+                                            <option value="63">Cavalier King Charles Spaniel</option>
+                                            <option value="272">Staffordshire Bull Terrier</option>
+                                            <option value="227">Retriever (Golden)</option>
+                                            <option value="42">Border Terrier</option>
+                                            <option value="46">Boxer</option>
+                                            <option value="288">West Highland White Terrier</option>
+                                            <option value="249">Shih Tzu</option>
+                                            <option value="186">Miniature Schnauzer</option>
+                                            <option value="173">Lhasa Apso</option>
+                                            <option value="54">Bulldog</option>
+                                            <option value="218">Pug</option>
+                                            <option value="293">Yorkshire Terrier</option>
+                                            <option value="289">Whippet</option>
+                                            <option value="52">Bull Terrier</option>
+                                            <option value="37">Bichon Frise</option>
+                                            <option value="231">Rottweiler</option>
+                                            <option value="" disabled="disabled">——— ALL BREEDS ———</option>
+                                            <option value="1">Affenpinscher</option>
+                                            <option value="2">Afghan Hound</option>
+                                            <option value="5">Airedale Terrier</option>
+                                            <option value="6">Akita</option>
+                                            <option value="470">Alapaha Blue Blood Bulldog</option>
+                                            <option value="137">Alaskan Husky</option>
+                                            <option value="556">Alaskan Klee Kia Minature</option>
+                                            <option value="557">Alaskan Klee Kia Standard</option>
+                                            <option value="555">Alaskan Klee Kia Toy</option>
+                                            <option value="7">Alaskan Malamute</option>
+                                            <option value="620">American Hairless Terrier</option>
+                                            <option value="579">American Shepherd (Minature)</option>
+                                            <option value="10">Anatolian Shepherd Dog</option>
+                                            <option value="11">Australian Cattle Dog</option>
+                                            <option value="13">Australian Kelpie</option>
+                                            <option value="623">Australian Labradoodle</option>
+                                            <option value="14">Australian Shepherd</option>
+                                            <option value="15">Australian Silky Terrier</option>
+                                            <option value="16">Australian Terrier</option>
+                                            <option value="17">Azawakh</option>
+                                            <option value="471">Barbet (French Water Dog)</option>
+                                            <option value="18">Basenji</option>
+                                            <option value="19">Basset</option>
+                                            <option value="20">Basset Bleu De Gascogne </option>
+                                            <option value="21">Basset Fauve De Bretagne</option>
+                                            <option value="22">Basset Griffon Vendeen (Grand)</option>
+                                            <option value="23">Basset Griffon Vendeen (Petit)</option>
+                                            <option value="24">Basset Hound</option>
+                                            <option value="25">Bavarian Mountain Hound</option>
+                                            <option value="26">Beagle</option>
+                                            <option value="27">Bearded Collie</option>
+                                            <option value="477">Beauceron</option>
+                                            <option value="29">Bedlington Terrier</option>
+                                            <option value="30">Belgian Shepherd Dog</option>
+                                            <option value="31">Belgian Shepherd Dog (Groenendael)</option>
+                                            <option value="32">Belgian Shepherd Dog (Laekenois)</option>
+                                            <option value="33">Belgian Shepherd Dog (Malinois)</option>
+                                            <option value="34">Belgian Shepherd Dog (Tervueren)</option>
+                                            <option value="35">Bergamasco</option>
+                                            <option value="36">Bernese Mountain Dog</option>
+                                            <option value="37">Bichon Frise</option>
+                                            <option value="468">Black Mouth Cur</option>
+                                            <option value="38">Bloodhound</option>
+                                            <option value="39">Bolognese</option>
+                                            <option value="41">Border Collie</option>
+                                            <option value="42">Border Terrier</option>
+                                            <option value="43">Borzoi</option>
+                                            <option value="44">Boston Terrier</option>
+                                            <option value="45">Bouvier Des Flandres</option>
+                                            <option value="46">Boxer</option>
+                                            <option value="47">Bracco Italiano</option>
+                                            <option value="48">Briard</option>
+                                            <option value="553">Briquet Griffon Vendeen</option>
+                                            <option value="49">Brittany</option>
+                                            <option value="50">Broken Haired Terriers</option>
+                                            <option value="52">Bull Terrier</option>
+                                            <option value="53">Bull Terrier (Miniature)</option>
+                                            <option value="54">Bulldog</option>
+                                            <option value="55">Bullmastiff</option>
+                                            <option value="56">Cairn Terrier</option>
+                                            <option value="58">Canaan Dog</option>
+                                            <option value="59">Canadian Eskimo Dog</option>
+                                            <option value="590">Castro Laboreiro</option>
+                                            <option value="62">Catalan Sheepdog </option>
+                                            <option value="601">Cavachon</option>
+                                            <option value="63">Cavalier King Charles Spaniel</option>
+                                            <option value="606">Cavapoo</option>
+                                            <option value="64">Central Asian Shepherd Dog</option>
+                                            <option value="65">Cesky Terrier</option>
+                                            <option value="481">Chesapeake Bay Retiever</option>
+                                            <option value="66">Chihuahua (Long Coat)</option>
+                                            <option value="67">Chihuahua (Smooth Coat)</option>
+                                            <option value="68">Chinese Crested</option>
+                                            <option value="607">Chorkie</option>
+                                            <option value="69">Chow Chow</option>
+                                            <option value="597">Chug</option>
+                                            <option value="616">Ciobanesc De Bucovina</option>
+                                            <option value="70">Cirneco dell'Etna</option>
+                                            <option value="72">Collie (Rough)</option>
+                                            <option value="73">Collie (Smooth)</option>
+                                            <option value="74">Continental Landseer</option>
+                                            <option value="596">Cockapoo</option>
+                                            <option value="75">Coonhound</option>
+                                            <option value="76">Coton de tulear</option>
+                                            <option value="546">Croatian Sheepdog</option>
+                                            <option value="77">Crossbreed</option>
+                                            <option value="521">Crossbreed (Large)</option>
+                                            <option value="520">Crossbreed (Small)</option>
+                                            <option value="78">Dachsbracke</option>
+                                            <option value="79">Dachshund (Long-Haired)</option>
+                                            <option value="80">Dachshund (Miniature Long-Haired)</option>
+                                            <option value="81">Dachshund (Miniature Smooth-Haired)</option>
+                                            <option value="82">Dachshund (Miniature Wire-Haired)</option>
+                                            <option value="83">Dachshund (Smooth-Haired)</option>
+                                            <option value="84">Dachshund (Wire-Haired)</option>
+                                            <option value="85">Dalmatian</option>
+                                            <option value="86">Dandie Dinmont Terrier</option>
+                                            <option value="559">Danish Broholmer</option>
+                                            <option value="87">Deerhound</option>
+                                            <option value="88">Dobermann</option>
+                                            <option value="89">Dogue De Bordeaux</option>
+                                            <option value="473">Dorset Old Tyme Bulldogge</option>
+                                            <option value="91">Drentse Partridge Dog</option>
+                                            <option value="549">Dutch Shepherd Dog</option>
+                                            <option value="93">English Setter</option>
+                                            <option value="612">English Shepherd</option>
+                                            <option value="94">English Toy Terrier (Black &amp; Tan)</option>
+                                            <option value="518">Entlebucher Mountain Dog</option>
+                                            <option value="95">Estrela Mountain Dog</option>
+                                            <option value="96">Eurasier</option>
+                                            <option value="97">Felland Terrier</option>
+                                            <option value="98">Finnish Lapphund</option>
+                                            <option value="99">Finnish Spitz</option>
+                                            <option value="100">Fox Terrier (Smooth)</option>
+                                            <option value="101">Fox Terrier (Wire)</option>
+                                            <option value="102">Foxhound</option>
+                                            <option value="103">French Bulldog</option>
+                                            <option value="514">French Pointer</option>
+                                            <option value="595">Floodle</option>
+                                            <option value="105">German Longhaired Pointer</option>
+                                            <option value="106">German Pinscher</option>
+                                            <option value="107">German Pointer</option>
+                                            <option value="108">German Shepherd Dog (Alsatian)</option>
+                                            <option value="109">German Shorthaired Pointer</option>
+                                            <option value="110">German Spitz (Klein)</option>
+                                            <option value="111">German Spitz (Mittel)</option>
+                                            <option value="112">German Wirehaired Pointer</option>
+                                            <option value="113">Giant Schnauzer</option>
+                                            <option value="114">Glen Of Imaal Terrier</option>
+                                            <option value="608">Goldendoodle</option>
+                                            <option value="115">Gordon Setter</option>
+                                            <option value="117">Grand Bleu De Gascogne</option>
+                                            <option value="547">Grand Griffon Vendeen</option>
+                                            <option value="119">Great Dane</option>
+                                            <option value="516">Great Swiss Mountain Dog</option>
+                                            <option value="558">Greek Harehound</option>
+                                            <option value="121">Greenland Dog</option>
+                                            <option value="122">Greyhound</option>
+                                            <option value="124">Griffon Bruxellois</option>
+                                            <option value="548">Griffon Fauve De Bretagne</option>
+                                            <option value="126">Halden Hound</option>
+                                            <option value="127">Hamiltonstovare</option>
+                                            <option value="489">Hanoverian Hound</option>
+                                            <option value="128">Harrier</option>
+                                            <option value="129">Havanese</option>
+                                            <option value="131">Hovawart</option>
+                                            <option value="132">Hungarian Kuvasz</option>
+                                            <option value="133">Hungarian Puli</option>
+                                            <option value="619">Hungarian Pumi</option>
+                                            <option value="134">Hungarian Vizsla</option>
+                                            <option value="135">Hungarian Wire Haired Vizsla</option>
+                                            <option value="138">Ibizan Hound</option>
+                                            <option value="141">Irish Red &amp; White Setter</option>
+                                            <option value="143">Irish Setter</option>
+                                            <option value="144">Irish Terrier</option>
+                                            <option value="145">Irish Water Spaniel</option>
+                                            <option value="146">Irish Wolfhound</option>
+                                            <option value="147">Italian Greyhound</option>
+                                            <option value="148">Italian Spinone</option>
+                                            <option value="149">Italian Volpino</option>
+                                            <option value="609">Jack Chi</option>
+                                            <option value="602">Jack-A-Poo</option>
+                                            <option value="150">Jack Russell Terrier</option>
+                                            <option value="151">Japanese Akita Inu</option>
+                                            <option value="152">Japanese Chin</option>
+                                            <option value="153">Japanese Shiba Inu</option>
+                                            <option value="155">Japanese Spitz</option>
+                                            <option value="614">Jura Hound</option>
+                                            <option value="519">Karakachan (Bulgarian Shepherd Dog)</option>
+                                            <option value="156">Keeshond</option>
+                                            <option value="158">Kerry Blue Terrier</option>
+                                            <option value="159">King Charles Spaniel</option>
+                                            <option value="647">Kokoni</option>
+                                            <option value="160">Komondor</option>
+                                            <option value="161">Kooikerhondje</option>
+                                            <option value="475">Korean Jindo</option>
+                                            <option value="163">Korthals Griffon</option>
+                                            <option value="515">Kromfohrlander</option>
+                                            <option value="164">Kuvasz</option>
+                                            <option value="165">Labradoodle</option>
+                                            <option value="492">Lagotto Romagnolo</option>
+                                            <option value="168">Lakeland Terrier</option>
+                                            <option value="169">Lancashire Heeler</option>
+                                            <option value="171">Large Munsterlander</option>
+                                            <option value="172">Leonberger</option>
+                                            <option value="173">Lhasa Apso</option>
+                                            <option value="174">Lowchen (Little Lion Dog)</option>
+                                            <option value="175">Lucas Terrier</option>
+                                            <option value="176">Lurcher</option>
+                                            <option value="179">Maltese</option>
+                                            <option value="180">Manchester Terrier</option>
+                                            <option value="181">Maremma Sheepdog</option>
+                                            <option value="182">Mastiff</option>
+                                            <option value="495">Mexican Hairless (Intermediate)</option>
+                                            <option value="496">Mexican Hairless (Miniature)</option>
+                                            <option value="497">Mexican Hairless (Standard)</option>
+                                            <option value="184">Miniature Pinscher</option>
+                                            <option value="186">Miniature Schnauzer</option>
+                                            <option value="523">Mongrel (Large)</option>
+                                            <option value="524">Mongrel (Medium)</option>
+                                            <option value="522">Mongrel (Small)</option>
+                                            <option value="550">Mudi</option>
+                                            <option value="188">Neapolitan Mastiff</option>
+                                            <option value="136">New Zealand Huntaway</option>
+                                            <option value="189">Newfoundland</option>
+                                            <option value="190">Norfolk Terrier</option>
+                                            <option value="191">Northern Inuit Dog</option>
+                                            <option value="192">Norwegian Buhund</option>
+                                            <option value="193">Norwegian Elkhound</option>
+                                            <option value="194">Norwegian Lundehund</option>
+                                            <option value="195">Norwich Terrier</option>
+                                            <option value="526">Old Danish Pointer</option>
+                                            <option value="196">Old English Sheepdog</option>
+                                            <option value="197">Otterhound</option>
+                                            <option value="198">Papillon</option>
+                                            <option value="199">Parson Russell Terrier</option>
+                                            <option value="200">Patterdale Terrier</option>
+                                            <option value="201">Pekingese</option>
+                                            <option value="202">Perdigueiro Portuguese</option>
+                                            <option value="205">Pharaoh Hound</option>
+                                            <option value="207">Plummer Terrier</option>
+                                            <option value="208">Pointer</option>
+                                            <option value="210">Polish Lowland Sheepdog</option>
+                                            <option value="211">Pomeranian</option>
+                                            <option value="212">Poodle (Miniature)</option>
+                                            <option value="213">Poodle (Standard)</option>
+                                            <option value="214">Poodle (Toy)</option>
+                                            <option value="215">Portuguese Podengo</option>
+                                            <option value="216">Portuguese Pointer</option>
+                                            <option value="551">Portuguese Sheepdog</option>
+                                            <option value="217">Portuguese Water Dog</option>
+                                            <option value="218">Pug</option>
+                                            <option value="603">Puggle</option>
+                                            <option value="474">Pumi</option>
+                                            <option value="219">Pyrenean Mastiff</option>
+                                            <option value="221">Pyrenean Mountain Dog</option>
+                                            <option value="222">Pyrenean Sheepdog</option>
+                                            <option value="617">Ratonero Bodeguero Andaluz</option>
+                                            <option value="224">Retriever (Chesapeake Bay)</option>
+                                            <option value="225">Retriever (Curly Coated)</option>
+                                            <option value="226">Retriever (Flat Coated)</option>
+                                            <option value="227">Retriever (Golden)</option>
+                                            <option value="228">Retriever (Labrador)</option>
+                                            <option value="229">Retriever (Nova Scotia Duck Tolling)</option>
+                                            <option value="230">Rhodesian Ridgeback</option>
+                                            <option value="231">Rottweiler</option>
+                                            <option value="232">Rough Collie</option>
+                                            <option value="235">Russian Black Terrier</option>
+                                            <option value="237">Saluki</option>
+                                            <option value="238">Samoyed</option>
+                                            <option value="239">Sarplaninac (Yugoslavian Shepherd)</option>
+                                            <option value="240">Schapendoes</option>
+                                            <option value="241">Schipperke</option>
+                                            <option value="242">Schnauzer</option>
+                                            <option value="243">Scottish Terrier</option>
+                                            <option value="244">Sealyham Terrier</option>
+                                            <option value="245">Segugio Italiano</option>
+                                            <option value="246">Shar Pei</option>
+                                            <option value="247">Shetland Sheepdog</option>
+                                            <option value="248">Shiba Inu</option>
+                                            <option value="604">Shih-Poo</option>
+                                            <option value="249">Shih Tzu</option>
+                                            <option value="250">Siberian Husky</option>
+                                            <option value="253">Skye Terrier</option>
+                                            <option value="254">Sloughi</option>
+                                            <option value="255">Slovakian Rough Haired Pointer</option>
+                                            <option value="256">Small Munsterlander</option>
+                                            <option value="258">Soft-Coated Wheaten Terrier</option>
+                                            <option value="260">Spaniel (American Cocker)</option>
+                                            <option value="261">Spaniel (American Water)</option>
+                                            <option value="262">Spaniel (Clumber)</option>
+                                            <option value="263">Spaniel (Cocker)</option>
+                                            <option value="264">Spaniel (English Springer)</option>
+                                            <option value="265">Spaniel (Field)</option>
+                                            <option value="580">Spaniel (German)</option>
+                                            <option value="266">Spaniel (Irish Water)</option>
+                                            <option value="267">Spaniel (Sussex)</option>
+                                            <option value="268">Spaniel (Welsh Springer)</option>
+                                            <option value="615">Spanish Mastiff</option>
+                                            <option value="269">Spanish Water Dog</option>
+                                            <option value="270">Spanish Water Dog (Imp)</option>
+                                            <option value="605">Springerdoodle</option>
+                                            <option value="598">Sprocker</option>
+                                            <option value="271">St. Bernard</option>
+                                            <option value="562">Stabyhoun</option>
+                                            <option value="272">Staffordshire Bull Terrier</option>
+                                            <option value="275">Swedish Lapphund</option>
+                                            <option value="276">Swedish Vallhund</option>
+                                            <option value="277">Swiss Laufhund (Jura)</option>
+                                            <option value="554">Thai Bangkaew Dog</option>
+                                            <option value="278">Tibetan Mastiff</option>
+                                            <option value="279">Tibetan Spaniel</option>
+                                            <option value="280">Tibetan Terrier</option>
+                                            <option value="613">Tornjak</option>
+                                            <option value="560">Transylvanian Hound</option>
+                                            <option value="529">Treeing Walker Coonhound</option>
+                                            <option value="592">Turkish Kangal</option>
+                                            <option value="282">Weimaraner</option>
+                                            <option value="283">Welsh Corgi (Cardigan)</option>
+                                            <option value="284">Welsh Corgi (Pembroke)</option>
+                                            <option value="285">Welsh Sheepdog</option>
+                                            <option value="287">Welsh Terrier</option>
+                                            <option value="288">West Highland White Terrier</option>
+                                            <option value="289">Whippet</option>
+                                            <option value="292">Working Sheepdog</option>
+                                            <option value="599">Yorkie Russell</option>
+                                            <option value="600">Yorkipoo</option>
+                                            <option value="293">Yorkshire Terrier</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-purchase-price">Purchase Price</label>
+                                        <input type="text" name="form-purchase-price" placeholder="Purchase Price (£)..." class="form-purchase-price form-control" id="form-purchase-price">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-doc">Date of Collection</label>
+                                        <input type="date" name="form-doc" placeholder="Date of Collection..." class="form-doc form-control" id="form-doc">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="purchasePrice" class="control-label col-sm-8">Has your puppy ever suffered from any illness or injury?<span class="control-label req">*</span></label>
+
+                                        <div class="input_container col-sm-4 control-label">
+                                            <span class="col-xs-5 first-child RadioButtonPrevTratmentTextYes"><input id="TopLevelBodyPlaceholder_SiteTopLevelBodyPlaceholder_BreederActivateDetails1_AddressAndPetDetails1_PreviousTreatmentsYes" type="radio" name="ctl00$ctl00$TopLevelBodyPlaceholder$SiteTopLevelBodyPlaceholder$BreederActivateDetails1$AddressAndPetDetails1$PreviousTreatments" value="PreviousTreatmentsYes"><label for="TopLevelBodyPlaceholder_SiteTopLevelBodyPlaceholder_BreederActivateDetails1_AddressAndPetDetails1_PreviousTreatmentsYes">Yes</label></span>
+                                            <span class="col-xs-5 last-child RadioButtonPrevTratmentTextNo"><input id="TopLevelBodyPlaceholder_SiteTopLevelBodyPlaceholder_BreederActivateDetails1_AddressAndPetDetails1_PreviousTreatmentsNo" type="radio" name="ctl00$ctl00$TopLevelBodyPlaceholder$SiteTopLevelBodyPlaceholder$BreederActivateDetails1$AddressAndPetDetails1$PreviousTreatments" value="PreviousTreatmentsNo"><label for="TopLevelBodyPlaceholder_SiteTopLevelBodyPlaceholder_BreederActivateDetails1_AddressAndPetDetails1_PreviousTreatmentsNo">No</label></span>
+                                        </div>
+
+                                    </div>
+                                    <button type="button" class="btn btn-next">Next</button>
+                                </div>
+
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-top">
+                                    <div class="form-top-left">
+                                        <h3>The new owner's details</h3>
+                                        <p>In this section you are required to enter the details of the new owner of your puppy who will be the policy holder of the five weeks free insurance. </p>
+                                        <p><strong>Providing incorrect information about the new owner could invalidate their insurance policy.</strong></p>
+                                        <p>For your interest, with stringent requirements around data protection, when new owners contact us about claiming or other policy queries, we use a combination of their surname, postcode, telephone number and pet’s breed as security questions to ensure we are speaking with the right person. Thank you.</p>
+                                    </div>
+                                    <div class="form-top-right">
+                                        <i class="fa fa-user"></i>
+                                    </div>
+                                </div>
+
+                                <div class="form-bottom">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-title">Title</label>
+                                        <input type="text" name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-first-name">First name</label>
+                                        <input type="text" name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-last-name">Last name</label>
+                                        <input type="text" name="form-last-name" placeholder="Last name..." class="form-last-name form-control" id="form-last-name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-email">Email</label>
+                                        <input type="email" name="form-email" placeholder="Email address..." class="form-email form-control" id="form-email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-post-code">Post Code</label>
+                                        <input type="text" name="form-post-code" placeholder="Post code......" class="form-post-code form-control" id="form-post-code">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-home-phone">Home Phone Number</label>
+                                        <input type="tel" name="form-home-phone" placeholder="Home Phone Number..." class="form-home-phone form-control" id="form-home-phone">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-mobile-phone">Mobile Phone Number</label>
+                                        <input type="tel" name="form-mobile-phone" placeholder="Mobile Phone Number..." class="form-mobile-phone form-control" id="form-mobile-phone">
+                                    </div>
+                                    <button type="button" class="btn btn-previous">Previous</button>
+                                    <button type="button" class="btn btn-next">Next</button>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <div class="form-top">
+                                    <div class="form-top-left">
+                                        <h3>Thank You</h3>
+                                        <!--<p>Social media profiles:</p>-->
+                                    </div>
+                                    <div class="form-top-right">
+                                        <i class="fa fa-twitter"></i>
+                                    </div>
+                                </div>
+                                <div class="form-bottom">
+                                    <h1>Thank you kindly</h1>
+
+                                </div>
+                            </fieldset>
+
+                        </form>
+
+                    </div>
                 </div>
             </div>
-            <!-- end Ts&Cs -->
-            </section>
+        </div>
+
     </div>
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/retina-1.1.0.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+    <!--[if lt IE 10]>
+        <script src="js/placeholder.js"></script>
+        <![endif]-->
+
 </body>
 
 </html>
